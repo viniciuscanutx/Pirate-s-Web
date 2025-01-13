@@ -72,17 +72,17 @@ export default function Navbar() {
                       </div>
                     )}
                   </div>
-                  <Link href="/channels" className="text-white hover:text-gray-300">
+                  <Link href="/ChannelsList" className="text-white hover:text-gray-300">
                     Canais
                   </Link>
-                  <Link href="/about" className="text-white hover:text-gray-300">
+                  <Link href="/About" className="text-white hover:text-gray-300">
                     Sobre
                   </Link>
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/search" className="text-white hover:text-gray-300 mr-5 ">
+              <Link href="/Search" className="text-white hover:text-gray-300 mr-5 ">
                 <Search className="text-white h-5 w-5 hover:text-gray-300"  />
               </Link>
               {user ? (
@@ -98,7 +98,7 @@ export default function Navbar() {
                   </span>
                   {showLogout && (
                     <div className="absolute -left-24 mt-0 py-2 w-52 bg-stone-900 rounded-md shadow-xl z-20">
-                      <Link href="/favorites">
+                      <Link href="/Favorites">
                         <button className="block px-4 py-2 text-sm capitalize text-white hover:bg-red-700 w-full text-left">
                           <FaUser className="inline-block h-5 w-5 mr-5" />
                           Perfil
@@ -115,7 +115,7 @@ export default function Navbar() {
                   )}
                 </div>
               ) : (
-                <Link href="/login" className="text-white hover:text-gray-300">
+                <Link href="/Login" className="text-white hover:text-gray-300">
                   <User className="h-6 w-6" />
                 </Link>
               )}
