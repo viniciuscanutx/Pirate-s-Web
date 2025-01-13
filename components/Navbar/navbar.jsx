@@ -35,7 +35,7 @@ export default function Navbar() {
     };
   
     return (
-      <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent mt-1">
+      <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-12">
@@ -59,12 +59,12 @@ export default function Navbar() {
                     </span>
                     {showCategories && (
                       <div className="absolute -right-20  py-2 w-48 bg-stone-900 rounded-md shadow-xl z-20">
-                        <Link href="/moviesc">
+                        <Link href="/MoviesCategory">
                           <div className="block px-4 py-2 text-sm capitalize text-white hover:bg-red-700">
                             Filmes
                           </div>
                         </Link>
-                        <Link href="/seriesc">
+                        <Link href="/SeriesCategory">
                           <div className="block px-4 py-2 text-sm capitalize text-white hover:bg-red-700">
                             Series
                           </div>
@@ -82,7 +82,7 @@ export default function Navbar() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/search" className="text-white hover:text-gray-300 mr-5 mt-1">
+              <Link href="/search" className="text-white hover:text-gray-300 mr-5 ">
                 <Search className="text-white h-5 w-5 hover:text-gray-300"  />
               </Link>
               {user ? (
