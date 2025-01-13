@@ -33,7 +33,7 @@ export default function HeroBanner({ movie }) {
           <Link
             href={movie.id ? `/watch/${movie.id}` : '#'}
             target="_blank"
-            className="bg-yellow-400 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400/90"
+            className="bg-red-600 text-white px-6 py-2 rounded font-semibold hover:bg-red-600/90"
           >
             Play
           </Link>
