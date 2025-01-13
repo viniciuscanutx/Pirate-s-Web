@@ -19,7 +19,7 @@ export default function Home({ channels }) {
   return (
     <>
       <Head>
-        <title>Xerife TV - Canais</title>
+        <title>Pirates - Canais</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="min-h-screen bg-black">

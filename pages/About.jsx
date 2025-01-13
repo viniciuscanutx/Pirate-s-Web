@@ -6,7 +6,7 @@ export default function About() {
     return (
         <>
         <Head>
-            <title>Xerife TV - Sobre</title>
+            <title>Pirates - Sobre</title>
             <link rel="icon" href="/favicon.png" />
         </Head>
         <div className="mt-48 bg-black">

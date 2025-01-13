@@ -81,7 +81,7 @@ const Auth = () => {
   return (
     <>
       <Head>
-        <title>XerifeTV - Login</title>
+        <title>Pirates - Login</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
 

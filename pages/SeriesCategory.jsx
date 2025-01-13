@@ -40,7 +40,7 @@ export default function Series({ seriesByGenre = {} }) {
   return (
     <>
       <Head>
-        <title>Xerife TV - Séries</title>
+        <title>Pirates - Séries</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="min-h-screen bg-black">
