@@ -8,6 +8,9 @@ import { auth } from '@/config/firebaseConfig'
 
 import { FaUser } from 'react-icons/fa6';
 
+
+
+
 export default function Navbar() {
     const [user, setUser] = useState(null)
     const [showLogout, setShowLogout] = useState(false)
@@ -32,15 +35,15 @@ export default function Navbar() {
     };
   
     return (
-      <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent">
+      <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent mt-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-12">
-              <Link href="/" className="hover:opacity-80 transition-opacity mb-2">
+              <Link href="/" className="hover:opacity-80 transition-opacity">
                 <img
-                  height="100"
-                  width="100"
-                  src="https://res.cloudinary.com/dfrkqwlv0/image/upload/v1736777889/logo_jx1thb.png"
+                  height="80"
+                  width="80"
+                  src="https://pt.boxcritters.wiki/images/3/38/Chap%C3%A9u_Pirata_%C3%ADcone.png"
                   alt="Logo"
                 />
               </Link>
@@ -79,16 +82,16 @@ export default function Navbar() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/search" className="text-white hover:text-gray-300 mr-5">
-                <Search className="text-white h-5 w-5" />
+              <Link href="/search" className="text-white hover:text-gray-300 mr-5 mt-1">
+                <Search className="text-white h-5 w-5 hover:text-gray-300"  />
               </Link>
               {user ? (
                 <div
-                  className="relative"
+                  className="relative mt-1 hover:text-gray-300"
                   onMouseLeave={() => setShowLogout(false)}
                 >
                   <span
-                    className="text-white cursor-pointer"
+                    className="text-white cursor-pointer hover:text-gray-300"
                     onMouseEnter={() => setShowLogout(true)}
                   >
                     {user.displayName || user.email}
