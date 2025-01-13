@@ -51,7 +51,7 @@ export default function PlayerPage({ movie }) {
   return (
     <>
       <Head>
-        <title>{`Xerife TV - ${movie.titulo}`}</title>
+        <title>{`Pirates - ${movie.titulo}`}</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="relative">

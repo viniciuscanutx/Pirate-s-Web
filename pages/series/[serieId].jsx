@@ -91,7 +91,7 @@ const SeriesDetail = ({ series, allSeries }) => {
     return (
         <>
             <Head>
-                <title>{`Xerife TV - ${series.title}`}</title>
+                <title>{`Pirates - ${series.title}`}</title>
                 <link rel="icon" href="/favicon.png" />
             </Head>
             <Navbar />

@@ -88,7 +88,7 @@ const Movie = ({ movie, similarMovies }) => {
   return (
     <>
       <Head>
-        <title>{`Xerife TV - ${movie.title}`}</title>
+        <title>{`Pirates - ${movie.title}`}</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Navbar />
