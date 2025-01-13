@@ -60,12 +60,12 @@ export default function Navbar() {
                     {showCategories && (
                       <div className="absolute -right-20  py-2 w-48 bg-stone-900 rounded-md shadow-xl z-20">
                         <Link href="/moviesc">
-                          <div className="block px-4 py-2 text-sm capitalize text-white hover:bg-yellow-400 hover:text-black">
+                          <div className="block px-4 py-2 text-sm capitalize text-white hover:bg-red-700">
                             Filmes
                           </div>
                         </Link>
                         <Link href="/seriesc">
-                          <div className="block px-4 py-2 text-sm capitalize text-white hover:bg-yellow-400 hover:text-black">
+                          <div className="block px-4 py-2 text-sm capitalize text-white hover:bg-red-700">
                             Series
                           </div>
                         </Link>
@@ -99,14 +99,14 @@ export default function Navbar() {
                   {showLogout && (
                     <div className="absolute -left-24 mt-0 py-2 w-52 bg-stone-900 rounded-md shadow-xl z-20">
                       <Link href="/favorites">
-                        <button className="block px-4 py-2 text-sm capitalize text-white hover:bg-yellow-400 hover:text-black w-full text-left">
+                        <button className="block px-4 py-2 text-sm capitalize text-white hover:bg-red-700 w-full text-left">
                           <FaUser className="inline-block h-5 w-5 mr-5" />
                           Perfil
                         </button>
                       </Link>
                       <button
                         onClick={handleLogout}
-                        className="block px-4 py-2 text-sm capitalize text-white hover:bg-yellow-400 hover:text-black w-full text-left"
+                        className="block px-4 py-2 text-sm capitalize text-white hover:bg-red-700 w-full text-left"
                       >
                         <LogOut className="inline-block h-5 w-5 mr-5" />
                         Sair
