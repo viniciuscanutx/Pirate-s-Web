@@ -10,7 +10,7 @@ export default function HeroBanner({ movie }) {
     <div className="relative h-[80vh] w-full mb-32">
       <Image
         src={movie.banner || movie.poster}
-        alt={movie.title || 'Filme'}
+        alt={movie.titulo || 'Filme'}
         fill
         className="object-cover"
         priority
@@ -18,16 +18,16 @@ export default function HeroBanner({ movie }) {
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-          {movie.title || 'Título Desconhecido'}
+          {movie.titulo || 'Título Desconhecido'}
         </h1>
         <p className="text-lg text-white/90 max-w-2xl mb-2">
-          {movie.releaseYear || 'Ano Desconhecido'} • {movie.duration ? convertMinutesToHours(movie.duration) : 'Duração Desconhecida'}
+          {movie.lancamento || 'Ano Desconhecido'} • {movie.duracao ? convertMinutesToHours(movie.duracao) : 'Duração Desconhecida'}
         </p>
         <p className="text-lg text-white/90 max-w-2xl mb-3">
-          {movie.genre ? (movie.genre) : 'Gênero Desconhecido'}
+          {movie.genero ? (movie.genero) : 'Gênero Desconhecido'}
         </p>
         <h2 className="text-base flex items-center mb-6 text-white/90">
-          {movie.synopsis || 'Sinopse indisponível'}
+          {movie.sinopse || 'Sinopse indisponível'}
         </h2>
         <div className="flex gap-4">
           <Link

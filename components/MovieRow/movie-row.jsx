@@ -33,7 +33,7 @@ export default function MovieRow({ title, movies, isSeries = false }) {
           className="flex space-x-4 overflow-x-scroll scrollbar-hide px-8 pb-4"
         >
           {movies.map((movie) => {
-            const linkHref = isSeries ? `/series/${movie._id}` : `/movie/${movie._id}`
+            const linkHref = isSeries ? `/series/${movie.id}` : `/movie/${movie.id}`
 
             return (
               <div key={movie.id} className="flex-none w-[200px]">
