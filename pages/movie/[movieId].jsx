@@ -114,12 +114,12 @@ const Movie = ({ movie, similarMovies }) => {
             <h3 className="text-3xl font-bold mb-2 text-white">{movie.titulo}</h3>
             <h4 className="text-md text-gray-100 mb-6 flex items-center">
               {movie.hasSubtitles ? (
-                <span className="bg-yellow-500 text-black px-1 rounded text-xs font-bold flex items-center">
+                <span className="bg-red-700 text-white px-2 py-0.5 rounded text-xs font-bold flex items-center">
                   <FaTags className="mr-1" />
                   CC
                 </span>
               ) : (
-                <span className="bg-blue-500 text-white px-1 rounded text-xs font-bold flex items-center">
+                <span className="bg-yellow-400 text-black px-1 rounded text-xs font-bold flex items-center">
                   <FaTags className="mr-1" />
                   DUB
                 </span>
@@ -129,7 +129,7 @@ const Movie = ({ movie, similarMovies }) => {
             <h4 className="text-md text-gray-100 mb-6 flex items-center">
               {movie.lancamento} • {convertMinutesToHours(movie.duracao)}
             </h4>
-            <h2 className="text-xl flex items-center mb-6 text-yellow-300 font-bold">
+            <h2 className="text-2xl flex items-center mb-6 text-red-600 font-bold">
               <FaStar className="mr-2" /> {movie.nota}
             </h2>
             <div className="mb-8">
@@ -138,7 +138,7 @@ const Movie = ({ movie, similarMovies }) => {
             <div className="flex gap-4 mb-8">
               <Link
                 href={movie.id ? `/watch/${movie.id}` : '#'}
-                className="px-6 py-3 bg-white text-black uppercase rounded-md shadow-md hover:bg-yellow-300 transition"
+                className="px-6 py-3 bg-white text-black uppercase rounded-md shadow-md hover:bg-red-600 hover:text-white transition"
               >
                 Assistir
               </Link>

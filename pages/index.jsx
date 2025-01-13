@@ -100,7 +100,7 @@ export async function getServerSideProps() {
     return {
       props: {
         allMovies: sortedMovies,
-        featuredMovie: sortedMovies[0],
+        featuredMovie: sortedMovies[2],
         moviesByReleaseYear,
         topRatedMovies,
         comedyMovies,
@@ -179,7 +179,7 @@ export default function Home({ featuredMovie, topRatedMovies, moviesByReleaseYea
   return (
     <>
       <Head>
-        <title>Xerife TV - Home</title>
+        <title>Pirates - Home</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="min-h-screen bg-black">

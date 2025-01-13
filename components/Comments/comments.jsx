@@ -99,7 +99,7 @@ const Comments = ({ movieId }) => {
           )}
         </div>
         <button
-          className="mt-5 bg-yellow-400 hover:bg-yellow-400/90 text-black px-4 py-2 rounded"
+          className="mt-5 bg-red-600 hover:bg-red-600/90 text-white px-4 py-2 rounded"
           onClick={handleAddComment}
         >
           Enviar

@@ -48,10 +48,9 @@ export default function MovieRow({ title, movies, isSeries = false }) {
                   </div>
                   <div className="mt-2 space-y-1">
                     <h3 className="text-white font-medium truncate">{movie.titulo}</h3>
-                    <h4 className="text-gray-300 font-light truncate">{movie.lancamento}</h4>
                     <div className="flex items-center justify-start space-x-2">
                       {movie.hasSubtitles && (
-                        <span className="bg-yellow-500 text-black px-1 rounded text-xs font-bold flex items-center">
+                        <span className="bg-red-600 text-white px-1 py-0.5 rounded text-xs font-bold flex items-center">
                           <FaTags className="mr-1" />
                           CC
                         </span>
@@ -63,8 +62,9 @@ export default function MovieRow({ title, movies, isSeries = false }) {
                         </span>
                       )}
                     </div>
+                    <h4 className="text-gray-300 font-light truncate">{movie.lancamento}</h4>
                     <div className="flex items-center gap-1 text-sm">
-                      <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                      <Star className="h-4 w-4 text-red-600 fill-red-600" />
                       <span className="text-white/90">{movie.nota}</span>
                     </div>
                   </div>
