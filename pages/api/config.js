@@ -2,19 +2,19 @@
 const API_BASE_URL = "https://web-films-api-test.vercel.app";
 
 const API_MOVIES_ENDPOINTS = {
-  movies: "/found",
+  movies: "https://web-films-api-test.vercel.app/found",
   search: "/search?titulo=",
-  forreleasedate: "/releasedate",
+  forreleasedate: "https://web-films-api-test.vercel.app/releasedate",
 };
 
 const API_SERIES_ENDPOINTS = {
-  series: "/series/found",
-  search: "/series/search?titulo=",
-  forreleasedate: "/series/releasedate",
+  series: "https://web-films-api-test.vercel.app/series/found",
+  search: "https://web-films-api-test.vercel.app/series/search?titulo=",
+  forreleasedate: "https://web-films-api-test.vercel.app/series/releasedate",
 };
 
 const API_CHANNELS_ENDPOINTS = {
-  channels: "/channels",
+  channels: "https://web-films-api-test.vercel.app/channels",
 };
 
 export const API_CONFIG = {
