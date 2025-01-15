@@ -1,44 +1,51 @@
 import Link from "next/link";
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import Navbar from "@/components/Navbar/navbar";
 
-import { FaTags } from 'react-icons/fa6';
+import { FaTags, FaFilm, FaTv } from 'react-icons/fa6';
 
 export default function Search() {
     const [searchTerm, setSearchTerm] = useState("");
-    const [allMovies, setAllMovies] = useState([]);
-    const [filteredMovies, setFilteredMovies] = useState([]);
+    const [allContent, setAllContent] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchMovies = async () => {
+        const fetchContent = async () => {
             setLoading(true);
             setError(null);
 
             try {
-                const response = await fetch(`https://web-films-api-test.vercel.app/found`);
+                const [moviesResponse, seriesResponse] = await Promise.all([
+                    fetch('https://web-films-api-test.vercel.app/found'),
+                    fetch('https://web-films-api-test.vercel.app/series/found')
+                ]);
 
-                if (!response.ok) {
-                    throw new Error("Failed to fetch movies");
+                if (!moviesResponse.ok || !seriesResponse.ok) {
+                    throw new Error("Failed to fetch content");
                 }
 
-                const data = await response.json();
+                const [moviesData, seriesData] = await Promise.all([
+                    moviesResponse.json(),
+                    seriesResponse.json()
+                ]);
 
-                if (Array.isArray(data)) {
-                    const movies = data.map(movie => ({
-                        ...movie,
-                        hasSubtitles: !!movie.legenda,
-                    }));
-                    setAllMovies(movies);
-                    setFilteredMovies(movies); 
-                } else {
-                    setAllMovies([]);
-                    setFilteredMovies([]);
-                    setError("Unexpected response format.");
-                }
+                const processedMovies = Array.isArray(moviesData) ? moviesData.map(movie => ({
+                    ...movie,
+                    hasSubtitles: !!movie.legenda,
+                    type: 'movie'
+                })) : [];
+
+                const processedSeries = Array.isArray(seriesData) ? seriesData.map(series => ({
+                    ...series,
+                    hasSubtitles: series.temporadas.some(temporada => temporada.episodios.some(episodio => !!episodio.legenda)),
+                    type: 'series'
+                })) : [];
+
+                const allContent = [...processedMovies, ...processedSeries];
+                setAllContent(allContent);
             } catch (err) {
                 setError(err.message);
             } finally {
@@ -46,31 +53,28 @@ export default function Search() {
             }
         };
 
-        fetchMovies();
+        fetchContent();
     }, []);
 
-    const handleSearch = () => {
+    const filteredContent = useMemo(() => {
         if (!searchTerm.trim()) {
-            setFilteredMovies(allMovies); 
+            return allContent;
         } else {
             const lowercasedTerm = searchTerm.toLowerCase();
-            const filtered = allMovies.filter((movie) =>
-                movie.titulo.toLowerCase().includes(lowercasedTerm)
+            return allContent.filter((item) =>
+                item.titulo.toLowerCase().includes(lowercasedTerm)
             );
-            setFilteredMovies(filtered);
         }
-    };
+    }, [searchTerm, allContent]);
 
-    const handleKeyDown = (event) => {
-        if (event.key === "Enter") {
-            handleSearch();
-        }
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
     };
 
     return (
         <>
             <Head>
-                <title>Xerife TV - Search</title>
+                <title>Pirates - Search</title>
                 <link rel="icon" href="/favicon.png" />
             </Head>
             <div className="min-h-screen bg-black">
@@ -80,51 +84,50 @@ export default function Search() {
                         <input
                             className="p-3 w-96 bg-black border-white border-2 rounded-md text-center text-white placeholder-gray-500"
                             type="text"
-                            placeholder="Nome do Filme"
+                            placeholder="Nome do Filme ou Série"
                             value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                            onKeyDown={handleKeyDown}
+                            onChange={handleSearchChange}
                         />
-                        <button
-                            className="ml-4 p-3 bg-red-600 text-white font-bold rounded-md hover:bg-red-600/90"
-                            onClick={handleSearch}
-                        >
-                            Procurar
-                        </button>
                     </div>
 
                     {loading && <p className="text-white mt-8">Loading...</p>}
 
                     <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-2">
-                        {filteredMovies.length > 0 ? (
-                            filteredMovies.map((movie) => (
+                        {filteredContent.length > 0 ? (
+                            filteredContent.map((item) => (
                                 <div
-                                    key={movie.id}
+                                    key={item._id}
                                     className="bg-stone-950 border-white/10 border-2 p-6 rounded-md shadow-lg max-w-xs mx-auto"
                                 >
-                                    <Link href={`/movie/${movie._id}`} className="block group/card">
+                                    <Link href={item.type === 'movie' ? `/movie/${item._id}` : `/series/${item._id}`} className="block group/card">
                                         <img
-                                            src={movie.poster}
-                                            alt={movie.titulo}
+                                            src={item.poster || "/placeholder.svg"}
+                                            alt={item.titulo}
                                             className="w-full h-50 object-cover rounded-md mb-4 group-hover/card:scale-105 transition duration-200"
                                         />
-                                        <h2 className="text-lg font-bold text-white">{movie.titulo}</h2>
-                                        <p className="text-gray-400 text-sm mt-2 line-clamp-4">{movie.sinopse}</p>
-                                        <p className="text-gray-400 text-sm mt-2">Lançamento: {movie.fulllancamento}</p>
+                                        <h2 className="text-lg font-bold text-white">{item.titulo}</h2>
+                                        <p className="text-gray-400 text-sm mt-2 line-clamp-4">{item.sinopse}</p>
+                                        <p className="text-gray-400 text-sm mt-2">Lançamento: {item.fulllancamento}</p>
                                         <p className="text-gray-400 text-sm mt-2">
-                                            Gênero: {movie.genero}
+                                            Gênero: {item.genero}
                                         </p>
-                                        {movie.hasSubtitles && (
-                                            <span className="inline-flex items-center bg-red-600 text-white px-2 py-1 rounded text-xs font-bold mt-5">
-                                                <FaTags className="mr-1" />
-                                                CC
+                                        <div className="mt-5 flex justify-center items-center space-x-2">
+                                            {item.hasSubtitles && (
+                                                <span className="inline-flex items-center bg-red-600 text-white px-2 py-1 rounded text-xs font-bold">
+                                                    <FaTags className="mr-1" />
+                                                    CC
+                                                </span>
+                                            )}
+                                            <span className="inline-flex items-center bg-blue-600 text-white px-2 py-1 rounded text-xs font-bold">
+                                                {item.type === 'movie' ? <FaFilm className="mr-1" /> : <FaTv className="mr-1" />}
+                                                {item.type === 'movie' ? 'Filme' : 'Série'}
                                             </span>
-                                        )}
+                                        </div>
                                     </Link>
                                 </div>
                             ))
                         ) : (
-                            !loading && <p className="text-gray-400 mt-8">Nenhum Filme Encontrado.</p>
+                            !loading && <p className="text-gray-400 mt-8">Nenhum Filme ou Série Encontrado.</p>
                         )}
                     </div>
                 </div>
@@ -132,3 +135,4 @@ export default function Search() {
         </>
     );
 }
+
