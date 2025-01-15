@@ -32,15 +32,18 @@ export const getServerSideProps = async (context) => {
             banner: seriesData.banner,
             hasSubtitles: seriesData.temporadas.some(temporada => temporada.episodios.length >= 1),
             isDubbed: false, 
-            seasons: seriesData.temporadas.map(temporada => ({
+            seasons: seriesData.temporadas
+              .filter(temporada => temporada.episodios.length > 0)
+              .map(temporada => ({
                 number: temporada.numero,
                 episodes: temporada.episodios.map(episodio => ({
-                    number: episodio.numero,
-                    title: episodio.titulo,
-                    link: episodio.link,
-                    subtitles: episodio.legenda,
+                  number: episodio.numero,
+                  title: episodio.titulo,
+                  link: episodio.link,
+                  subtitles: episodio.legenda,
                 })),
-            })),
+              })),
+            hasEpisodes: seriesData.temporadas.some(temporada => temporada.episodios.length > 0),
         };
 
         const allSeries = allSeriesData.map((serie) => ({
@@ -67,12 +70,15 @@ export const getServerSideProps = async (context) => {
 } 
 
 const SeriesDetail = ({ series, allSeries }) => {
-    const [selectedSeason, setSelectedSeason] = useState(1);
-    const [selectedEpisode, setSelectedEpisode] = useState(series?.seasons[0]?.episodes[0]);
+    const [selectedSeason, setSelectedSeason] = useState(series.hasEpisodes ? series.seasons[0]?.number : null);
+    const [selectedEpisode, setSelectedEpisode] = useState(series.hasEpisodes ? series.seasons[0]?.episodes[0] : null);
 
     useEffect(() => {
-        setSelectedEpisode(series?.seasons[selectedSeason - 1]?.episodes[0]);
-    }, [selectedSeason, series]);
+      if (series.hasEpisodes && series.seasons.length > 0) {
+        setSelectedSeason(series.seasons[0].number);
+        setSelectedEpisode(series.seasons[0].episodes[0]);
+      }
+    }, [series]);
 
     if (!series) {
         return <p className="text-center text-xl mt-4">Série não encontrada.</p>;
@@ -80,18 +86,19 @@ const SeriesDetail = ({ series, allSeries }) => {
 
     const handleSeasonChange = (season) => {
         setSelectedSeason(season);
+        setSelectedEpisode(series.seasons.find(s => s.number === season).episodes[0]);
     };
 
     const handleEpisodeChange = (episodeIndex) => {
         setSelectedEpisode(series.seasons[selectedSeason - 1]?.episodes[episodeIndex]);
     };
 
-    const seasonEpisodes = series.seasons[selectedSeason - 1]?.episodes || [];
+    const seasonEpisodes = series.seasons.find(s => s.number === selectedSeason)?.episodes || [];
 
     return (
         <>
             <Head>
-                <title>{`Pirates - ${series.title}`}</title>
+                <title>{`Pirates - ${series.titulo}`}</title>
                 <link rel="icon" href="/favicon.png" />
             </Head>
             <Navbar />
@@ -106,7 +113,7 @@ const SeriesDetail = ({ series, allSeries }) => {
                     <div className="text-center max-w-xs flex-1 relative">
                         <ParentalRating rating={series.parentalRating} />
                         <Image
-                            src={series.poster}
+                            src={series.poster || "/placeholder.svg"}
                             width={280}
                             height={450}
                             alt={series.titulo}
@@ -139,41 +146,56 @@ const SeriesDetail = ({ series, allSeries }) => {
                             <p className="text-justify text-gray-100 leading-relaxed">{series.sinopse}</p>
                         </div>
 
-                        <div className="mb-8">
-                            <h4 className="text-xl font-bold mb-4 text-white">Selecione uma temporada:</h4>
-                            <select
-                                className="w-full p-2 bg-stone-900 text-white rounded"
-                                onChange={(e) => handleSeasonChange(parseInt(e.target.value))}
-                                value={selectedSeason}
-                            >
-                                {series.seasons.map((season, index) => (
-                                    <option key={season.number} value={index + 1}>
-                                        Temporada {season.number}
-                                    </option>
-                                ))}
-                            </select>
-                            <h4 className="text-xl font-bold mb-4 text-white mt-4">Selecione um episódio:</h4>
-                            <select
-                                className="w-full p-2 bg-stone-900 text-white rounded"
-                                onChange={(e) => handleEpisodeChange(parseInt(e.target.value))}
-                                value={selectedEpisode ? seasonEpisodes.indexOf(selectedEpisode) : 0}
-                            >
-                                {seasonEpisodes.length > 0 ? (
-                                    seasonEpisodes.map((episode, index) => (
-                                        <option key={episode.number} value={index}>
-                                            Episódio {episode.number}: {episode.title}
+                        {series.hasEpisodes ? (
+                            <div className="mb-8">
+                                <h4 className="text-xl font-bold mb-4 text-white">Selecione uma temporada:</h4>
+                                <select
+                                    className="w-full p-2 bg-stone-900 text-white rounded"
+                                    onChange={(e) => handleSeasonChange(parseInt(e.target.value))}
+                                    value={selectedSeason}
+                                >
+                                    {series.seasons.map((season) => (
+                                        <option key={season.number} value={season.number}>
+                                            Temporada {season.number}
                                         </option>
-                                    ))
-                                ) : (
-                                    <option disabled>Nenhum episódio disponível</option>
-                                )}
-                            </select>
-                        </div>
+                                    ))}
+                                </select>
+                                <h4 className="text-xl font-bold mb-4 text-white mt-4">Selecione um episódio:</h4>
+                                <select
+                                    className="w-full p-2 bg-stone-900 text-white rounded"
+                                    onChange={(e) => handleEpisodeChange(parseInt(e.target.value))}
+                                    value={selectedEpisode ? seasonEpisodes.indexOf(selectedEpisode) : 0}
+                                >
+                                    {seasonEpisodes.length > 0 ? (
+                                        seasonEpisodes.map((episode, index) => (
+                                            <option key={episode.number} value={index}>
+                                                Episódio {episode.number}: {episode.title}
+                                            </option>
+                                        ))
+                                    ) : (
+                                        <option disabled>Nenhum episódio disponível</option>
+                                    )}
+                                </select>
+                            </div>
+                        ) : (
+                            <div className="mb-8">
+                                <p className="text-xl text-gray-400">Não há episódios disponíveis para esta série.</p>
+                            </div>
+                        )}
 
                         <div className="flex gap-4 mb-8">
                             <Link
-                                href={`/watchseries/${series.id}/${selectedSeason}/${selectedEpisode?.number}`}
-                                className="px-6 py-3 bg-white text-black uppercase rounded-md shadow-md hover:bg-yellow-300 transition"
+                                href={series.hasEpisodes ? `/watchseries/${series.id}/${selectedSeason}/${selectedEpisode?.number}` : '#'}
+                                className={`px-6 py-3 uppercase rounded-md shadow-md transition ${
+                                    series.hasEpisodes
+                                        ? "bg-white text-black hover:bg-red-600 hover:text-white"
+                                        : "bg-gray-500 text-gray-300 cursor-not-allowed"
+                                }`}
+                                onClick={(e) => {
+                                    if (!series.hasEpisodes) {
+                                        e.preventDefault();
+                                    }
+                                }}
                             >
                                 Assistir Episódio
                             </Link>
@@ -198,3 +220,4 @@ const SeriesDetail = ({ series, allSeries }) => {
 };
 
 export default SeriesDetail;
+
