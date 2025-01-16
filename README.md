@@ -1,8 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Pirate's
 
-## Getting Started
+![Logo da Pirate's](https://pt.boxcritters.wiki/images/3/38/Chap%C3%A9u_Pirata_%C3%ADcone.png)
 
-First, run the development server:
+## Sobre
+
+Pirate's é uma plataforma de streaming que oferece uma grande variedade de filmes e séries de TV. Nosso serviço foi projetado para proporcionar entretenimento para todas as idades e preferências.
+
+## Características
+
+- Extensa biblioteca de filmes e séries de TV
+- Interface amigável
+- Recomendações personalizadas
+- Sistema de contas de usuário
+- Aba de favoritos para salvar conteúdo
+- Opções de streaming em HD e 4K
+- Disponível em múltiplos dispositivos
+
+## Como Usar
+
+1. Visite [Pirate's]()
+2. Crie uma conta
+3. Comece a assistir seu conteúdo favorito
+
+## Sistema de Contas
+
+- Crie sua conta pessoal
+- Gerencie suas preferências
+- Acompanhe seu histórico de visualização
+
+## Aba de Favoritos
+
+- Salve seus filmes e séries favoritos
+- Acesse rapidamente o conteúdo que você mais gosta
+- Organize seu conteúdo preferido em um só lugar
+
+## Dispositivos Suportados
+
+- Smart TVs
+- Consoles de videogame
+- Dispositivos móveis (iOS e Android)
+- Tablets
+- Navegadores web
+
+## Como Rodar o Projeto Localmente
+
+Para rodar o projeto Xerife TV em seu computador local, siga estes passos:
+
+1. **Pré-requisitos**
+   - Certifique-se de ter o [Node.js](https://nodejs.org/) instalado (versão 14 ou superior)
+   - Você também precisará do [npm](https://www.npmjs.com/) (geralmente vem com o Node.js) ou [Yarn](https://yarnpkg.com/)
+
+2. **Clone o repositório**
+
+```bash 
+git clone https://github.com/viniciuscanutx/Pirate-s-Web.git
+```
+
+3. **Rode o Ambiente de Produção**
 
 ```bash
 npm run dev
@@ -14,27 +68,9 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no browser para acessar.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Tópico Importante
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Pirate's é um agregador de links, ele roda com a API WebFilmsAPI que se encontra aqui no mesmo perfil do Github mas pode ser adaptado para qualquer fim de streaming.
