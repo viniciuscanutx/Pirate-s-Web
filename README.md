@@ -53,6 +53,41 @@ Pirate's é uma plataforma de streaming que oferece uma grande variedade de film
 ## Screenshots do Projeto
 
 
+<p align="center">
+    <strong>HomePage</strong>
+</p>
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Home.jpg' width=450px />
+
+<p align="center">
+    <strong>Home - Index</strong>
+</p>
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Home%203.jpg' width=450px />
+
+<p align="center">
+    <strong>Categories - Movies</strong>
+</p>
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Categories%201.jpg' width=450px />
+
+<p align="center">
+    <strong>Categories - Series</strong>
+</p>
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Categories%202.jpg' width=450px />
+
+<p align="center">
+    <strong>Movie Screen</strong>
+</p>
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Movie%20Screen.jpg' width=450px />
+
+<p align="center">
+    <strong>Serie Screen</strong>
+</p>
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Serie%20Screen.jpg' width=450px />
+
+<p align="center">
+    <strong>Favorites!</strong>
+</p>
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Favorites.jpg' width=450px />
+
 
 ## Como Rodar o Projeto Localmente
 
