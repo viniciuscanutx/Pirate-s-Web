@@ -9,7 +9,7 @@ import LikeButton from "@/components/LikeButton/likebutton";
 import ParentalRating from "@/components/ParentalRating/parentalrating";
 import MovieRow from "@/components/MovieRow/movie-row";
 
-const { fetchNSeries, fetchNSeriesforID } = require('@/pages/api/client');
+import { fetchNSeries, fetchNSeriesforID } from '@/pages/api/client'
 
 import { FaStar, FaTags } from 'react-icons/fa6';
 

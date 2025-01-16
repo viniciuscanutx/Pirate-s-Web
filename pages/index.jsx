@@ -7,7 +7,7 @@ import MovieRow from '@/components/MovieRow/movie-row';
 
 import { parseFullReleaseDate, formatToFullReleaseDate } from '@/utils/dateUtils';
 import cleanDuration from '@/utils/cleanDuration';
-const { fetchNMovies, fetchNSeries } = require('@/pages/api/client');
+import { fetchNMovies, fetchNSeries } from '@/pages/api/client'
 
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { ref, onValue } from 'firebase/database';

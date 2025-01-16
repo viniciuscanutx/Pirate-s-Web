@@ -6,7 +6,7 @@ import { ref, onValue } from "firebase/database";
 import { db } from "@/config/firebaseConfig";
 import { getAuth, signOut } from "firebase/auth";
 
-const { fetchNMovies, fetchNSeries } = require('@/pages/api/client');
+import { fetchNMovies, fetchNSeries } from '@/pages/api/client'
 
 import Navbar from "@/components/Navbar/navbar";
 import MovieRow from "@/components/MovieRow/movie-row";

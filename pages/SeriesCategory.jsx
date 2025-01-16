@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Navbar from '@/components/Navbar/navbar';
 import MovieRow from '@/components/MovieRow/movie-row';
 
-const { fetchNSeries } = require('@/pages/api/client');
+import { fetchNSeries } from '@/pages/api/client'
 
 export async function getServerSideProps() {
   

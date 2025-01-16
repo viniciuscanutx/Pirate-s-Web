@@ -8,7 +8,7 @@ import LikeButton from "@/components/LikeButton/likebutton";
 import ParentalRating from "@/components/ParentalRating/parentalrating";
 import MovieRow from "@/components/MovieRow/movie-row";
 
-const { fetchNMovies, fetchNMoviesforID } = require('@/pages/api/client');
+import { fetchNMovies, fetchNMoviesforID } from '@/pages/api/client'
 
 import convertMinutesToHours from "@/utils/convertDuration";
 import cleanDuration from "@/utils/cleanDuration";

@@ -3,7 +3,7 @@ import Head from "next/head"
 import Navbar from "@/components/Navbar/navbar"
 import ChannelGrid from "@/components/ChannelRow/channel-row"
 
-import { fetchChannels } from "./api/client"
+import { fetchChannels } from '@/pages/api/client'
 
 export async function getServerSideProps() {
     const channels = await fetchChannels()
