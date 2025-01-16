@@ -34,6 +34,14 @@ Pirate's é uma plataforma de streaming que oferece uma grande variedade de film
 - Acesse rapidamente o conteúdo que você mais gosta
 - Organize seu conteúdo preferido em um só lugar
 
+## Sistema de Comentários
+
+- Caso ja tenha uma conta no site, você pode fazer comentários em filmes.
+
+## Sistema de filmes relacionados
+
+- Gostou de um filme e quer ver algo parecido? os filmes recomendados ficam logo abaixo dos comentários.
+
 ## Dispositivos Suportados
 
 - Smart TVs
@@ -41,6 +49,10 @@ Pirate's é uma plataforma de streaming que oferece uma grande variedade de film
 - Dispositivos móveis (iOS e Android)
 - Tablets
 - Navegadores web
+
+## Screenshots do Projeto
+
+
 
 ## Como Rodar o Projeto Localmente
 
