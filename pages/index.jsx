@@ -100,7 +100,7 @@ export async function getServerSideProps() {
     return {
       props: {
         allMovies: sortedMovies,
-        featuredMovie: sortedMovies[10],
+        featuredMovie: sortedMovies[0],
         moviesByReleaseYear,
         topRatedMovies,
         comedyMovies,
