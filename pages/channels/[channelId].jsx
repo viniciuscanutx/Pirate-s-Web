@@ -57,7 +57,7 @@ export default function PlayerPage({ channel }) {
     <>
       <Head>
         <title>{`Pirates - ${channel.canal}`}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <div className="relative">
         <VideoPlayer url={videoUrl} />

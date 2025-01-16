@@ -61,7 +61,7 @@ export default function SeriesPlayerPage({ episode, serieId, }) {
     <>
       <Head>
         <title>{`Pirates - ${episode.titulo}`}</title>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <div className="relative">
         {isMounted && (

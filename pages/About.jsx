@@ -7,7 +7,7 @@ export default function About() {
         <>
         <Head>
             <title>Pirates - Sobre</title>
-            <link rel="icon" href="/favicon.png" />
+            <link rel="icon" href="/icon.png" />
         </Head>
         <div className="mt-48 bg-black">
             <Navbar />

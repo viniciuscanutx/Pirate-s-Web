@@ -54,7 +54,7 @@ export default function Categories({ moviesByCategory = {} }) {
     <>
       <Head>
         <title>Pirates - Categorias</title>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <div className="min-h-screen bg-black">
         <Navbar />

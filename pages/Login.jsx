@@ -82,7 +82,7 @@ const Auth = () => {
     <>
       <Head>
         <title>Pirates - Login</title>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/icon.png" />
       </Head>
 
       <div className="mt-32 max-w-md mx-auto p-7 rounded shadow-lg bg-stone-900">

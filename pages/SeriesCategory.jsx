@@ -41,7 +41,7 @@ export default function Series({ seriesByGenre = {} }) {
     <>
       <Head>
         <title>Pirates - Séries</title>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <div className="min-h-screen bg-black">
         <Navbar />

@@ -16,7 +16,7 @@ const API_SERIES_ENDPOINTS = {
 };
 
 const API_CHANNELS_ENDPOINTS = {
-  channels: "https://web-films-api-test.vercel.app/channels",
+  channels: "https://web-films-api.vercel.app/channels",
 };
 
 export const API_CONFIG = {

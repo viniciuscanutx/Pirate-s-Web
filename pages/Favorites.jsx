@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
 
 import { ref, onValue } from "firebase/database";
 import { db } from "@/config/firebaseConfig";
@@ -143,6 +144,10 @@ const Favorites = () => {
 
     return (
         <>
+        <Head>
+            <title>Seus Favoritos</title>
+            <link rel="icon" href="/icon.png" />
+        </Head>
             <Navbar />
             <div className="mt-72 relative">
                 {user && (

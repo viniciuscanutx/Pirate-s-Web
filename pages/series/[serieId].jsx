@@ -99,7 +99,7 @@ const SeriesDetail = ({ series, allSeries }) => {
         <>
             <Head>
                 <title>{`Pirates - ${series.titulo}`}</title>
-                <link rel="icon" href="/favicon.png" />
+                <link rel="icon" href="/icon.png" />
             </Head>
             <Navbar />
             <div

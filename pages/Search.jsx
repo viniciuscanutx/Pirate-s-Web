@@ -75,7 +75,7 @@ export default function Search() {
         <>
             <Head>
                 <title>Pirates - Search</title>
-                <link rel="icon" href="/favicon.png" />
+                <link rel="icon" href="/logo.png" />
             </Head>
             <div className="min-h-screen bg-black">
                 <Navbar />
