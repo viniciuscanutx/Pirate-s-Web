@@ -44,7 +44,7 @@ Pirate's é uma plataforma de streaming que oferece uma grande variedade de film
 
 ## Como Rodar o Projeto Localmente
 
-Para rodar o projeto Xerife TV em seu computador local, siga estes passos:
+Para rodar o projeto Pirate's em seu computador local, siga estes passos:
 
 1. **Pré-requisitos**
    - Certifique-se de ter o [Node.js](https://nodejs.org/) instalado (versão 14 ou superior)
