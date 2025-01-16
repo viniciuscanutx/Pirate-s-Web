@@ -53,40 +53,40 @@ Pirate's é uma plataforma de streaming que oferece uma grande variedade de film
 ## Screenshots do Projeto
 
 
-<p align="center">
+<p align="left">
     <strong>HomePage</strong>
 </p>
-<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Home.jpg' width=450px />
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Home.jpg' width=700px />
 
-<p align="center">
+<p align="left">
     <strong>Home - Index</strong>
 </p>
-<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Home%203.jpg' width=450px />
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Home%203.jpg' width=700px />
 
-<p align="center">
+<p align="left">
     <strong>Categories - Movies</strong>
 </p>
-<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Categories%201.jpg' width=450px />
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Categories%201.jpg' width=700px />
 
-<p align="center">
+<p align="left">
     <strong>Categories - Series</strong>
 </p>
-<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Categories%202.jpg' width=450px />
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Categories%202.jpg' width=700px />
 
-<p align="center">
+<p align="left">
     <strong>Movie Screen</strong>
 </p>
-<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Movie%20Screen.jpg' width=450px />
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Movie%20Screen.jpg' width=700px />
 
-<p align="center">
+<p align="left">
     <strong>Serie Screen</strong>
 </p>
-<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Serie%20Screen.jpg' width=450px />
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Serie%20Screen.jpg' width=700px />
 
-<p align="center">
+<p align="left">
     <strong>Favorites!</strong>
 </p>
-<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Favorites.jpg' width=450px />
+<img src='https://raw.githubusercontent.com/viniciuscanutx/Pirate-s-Web/refs/heads/master/public/Screenshots/Favorites.jpg' width=700px />
 
 
 ## Como Rodar o Projeto Localmente
