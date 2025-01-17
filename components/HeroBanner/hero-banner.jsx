@@ -21,7 +21,7 @@ export default function HeroBanner({ movie }) {
           {movie.titulo || 'Título Desconhecido'}
         </h1>
         <p className="text-lg text-white/90 max-w-2xl mb-2">
-          {movie.lancamento || 'Ano Desconhecido'} • {movie.duracao ? convertMinutesToHours(movie.duracao) : 'Duração Desconhecida'}
+        {movie.parentalRating} • {movie.lancamento || 'Ano Desconhecido'} • {movie.duracao ? convertMinutesToHours(movie.duracao) : 'Duração Desconhecida'}
         </p>
         <p className="text-lg text-white/90 max-w-2xl mb-3">
           {movie.genero ? (movie.genero) : 'Gênero Desconhecido'}

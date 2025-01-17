@@ -36,6 +36,7 @@ export async function getServerSideProps() {
       link: movie.link,
       legenda: movie.legenda,
       banner: movie.banner,
+      parentalRating: movie.parentalRating,
       fulllancamento: formatToFullReleaseDate(parseFullReleaseDate(movie.fulllancamento)),
       hasSubtitles: !!movie.legenda,
       isDubbed: false,
