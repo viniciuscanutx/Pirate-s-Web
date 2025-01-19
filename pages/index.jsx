@@ -59,7 +59,7 @@ export async function getServerSideProps() {
       .sort((a, b) => parseFloat(b.nota) - parseFloat(a.nota))
       .slice(0, 15);
 
-    const comedyMovies = allMovies.filter(movie => movie.genero === "Comedy");
+    const comedyMovies = allMovies.filter(movie => movie.genero === "Comedia");
 
     const fetchSeries = async () => {
       try {
