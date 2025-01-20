@@ -4,7 +4,10 @@ import { useState, useEffect, useMemo } from "react";
 
 import Navbar from "@/components/Navbar/navbar";
 
+import { fetchNMovies, fetchNSeries } from '@/pages/api/client'
+
 import { FaTags, FaFilm, FaTv } from 'react-icons/fa6';
+import { fetchNMovies, fetchNSeries } from "./api/client";
 
 export default function Search() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -19,8 +22,8 @@ export default function Search() {
 
             try {
                 const [moviesResponse, seriesResponse] = await Promise.all([
-                    fetch('https://web-films-api-test.vercel.app/found'),
-                    fetch('https://web-films-api-test.vercel.app/series/found')
+                    fetchNMovies(),
+                    fetchNSeries()
                 ]);
 
                 if (!moviesResponse.ok || !seriesResponse.ok) {
