@@ -1,15 +1,14 @@
-import Link from "next/link";
-import Head from "next/head";
-import { useState, useEffect, useMemo } from "react";
+import Link from "next/link"
+import Head from "next/head"
+import { useState, useEffect, useMemo } from "react"
 
-import Navbar from "@/components/Navbar/navbar";
+import Navbar from "@/components/Navbar/navbar"
 
 import { fetchNMovies, fetchNSeries } from '@/pages/api/client'
-
 import { FaTags, FaFilm, FaTv } from 'react-icons/fa6';
-import { fetchNMovies, fetchNSeries } from "./api/client";
 
 export default function Search() {
+    
     const [searchTerm, setSearchTerm] = useState("");
     const [allContent, setAllContent] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -21,19 +20,8 @@ export default function Search() {
             setError(null);
 
             try {
-                const [moviesResponse, seriesResponse] = await Promise.all([
-                    fetchNMovies(),
-                    fetchNSeries()
-                ]);
-
-                if (!moviesResponse.ok || !seriesResponse.ok) {
-                    throw new Error("Failed to fetch content");
-                }
-
-                const [moviesData, seriesData] = await Promise.all([
-                    moviesResponse.json(),
-                    seriesResponse.json()
-                ]);
+                const moviesData = await fetchNMovies()
+                const seriesData = await fetchNSeries()
 
                 const processedMovies = Array.isArray(moviesData) ? moviesData.map(movie => ({
                     ...movie,
