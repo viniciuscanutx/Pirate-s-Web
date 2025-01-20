@@ -8,7 +8,7 @@ import { fetchNMovies, fetchNSeries } from '@/pages/api/client'
 import { FaTags, FaFilm, FaTv } from 'react-icons/fa6';
 
 export default function Search() {
-    
+
     const [searchTerm, setSearchTerm] = useState("");
     const [allContent, setAllContent] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -66,7 +66,7 @@ export default function Search() {
         <>
             <Head>
                 <title>Pirates - Search</title>
-                <link rel="icon" href="/logo.png" />
+                <link rel="icon" href="/icon.png" />
             </Head>
             <div className="min-h-screen bg-black">
                 <Navbar />
